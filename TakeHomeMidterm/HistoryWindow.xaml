@@ -1,0 +1,40 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TakeHomeMidterm"
+        xmlns:Specialized="clr-namespace:System.Collections.Specialized;assembly=System"
+        x:Class="TakeHomeMidterm.HistoryWindow"
+        mc:Ignorable="d"
+        Title="HistoryWindow"
+        Height="500"
+        Width="600"
+        Background="Gold"
+        ResizeMode="NoResize">
+    <Grid Margin="0,0,0.6,-4.6">
+
+       
+        <ListView Margin="20"
+                  Name="ListView" Background="Gold" 
+          BorderThickness="0">
+            <ListView x:Name="HistoryItems"
+                      Height="430"
+                      Width="500" Background="Gold" BorderThickness="0">
+                <ListView.Effect>
+                    <DropShadowEffect />
+                </ListView.Effect>
+                <ListView.View>
+                    <GridView AllowsColumnReorder="True">
+                        <GridViewColumn DisplayMemberBinding="{Binding GallonsUsed}"
+                                        Header="Gallons Used"
+                                        Width="250" />
+                        <GridViewColumn DisplayMemberBinding="{Binding TotalCharge}"
+                                        Header="Total Charge"
+                                        Width="250" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ListView>
+
+    </Grid>
+</Window>
